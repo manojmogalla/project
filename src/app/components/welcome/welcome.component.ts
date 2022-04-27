@@ -23,7 +23,7 @@ array=[];
   }
   public  onSubmit(){
    
-    this.router.navigateByUrl('/newaccount')
+    this.router.navigateByUrl('/createccount')
   }
 
 }

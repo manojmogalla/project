@@ -9,6 +9,14 @@ import { SignupModule } from './module/signup/signup.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { CustomPipe } from './pipes/custom.pipe';
+import { ApiserviceService } from './service/apiservice.service';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { CreateaccountComponent } from './components/createaccount/createaccount.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 
 
 
@@ -18,20 +26,31 @@ import { CustomPipe } from './pipes/custom.pipe';
   declarations: [
     AppComponent,
     HomeComponent,
-    CustomPipe
+    CustomPipe,
+    AboutusComponent,
+    CreateaccountComponent,
+    ContactusComponent
     
     
     
 ],
   imports: [
-    BrowserModule,
+BrowserModule,
+AgGridModule.withComponents([]),
     AppRoutingModule,
     FormsModule,
+    FontAwesomeModule,
+    
     HttpClientModule,
     ReactiveFormsModule,
-    SignupModule
+    SignupModule,
+    
+    
+    
+    
+
   ],
-  providers: [],
+  providers: [ApiserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

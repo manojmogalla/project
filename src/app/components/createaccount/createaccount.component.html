@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="card ">
+        <div class="card-header" style="text-align:center;background-color: rgb(105, 233, 105);"><h3>CONTACT FORM</h3></div>
+        <div class="card-body" style="background-color:rgb(181, 247, 181)">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" >
+        
+       
+        <p> 
+            <label for="firstname">FirstName:</label>
+            <input type="text" id="firstname" class="form-control" name="firstname" formControlName="firstname" ></p>
+       
+            <div
+            *ngIf="!contactForm.controls.firstname?.valid && (contactForm.controls.firstname?.dirty
+            ||contactForm.controls.firstname?.touched)" class="text-danger">
+            <div *ngIf="contactForm.controls.firstname?.errors.required">Please Enter Your Firstname</div>
+            <div *ngIf="contactForm.controls.firstname?.errors.minlength">First name should have atleast 6 characters</div>
+            
+              
+          </div>
+         
+        <p> LastName:<input type="text" class="form-control" name="lastname" formControlName="lastname"  ></p>
+        <div *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)">
+            <div [hidden]="!lastname.errors.required"class="text-danger">
+                Lastname cannot be empty
+            </div>
+            <div [hidden]="!lastname.errors.minlength" class="text-danger">
+              Lastname should contain atleast 6 letters.
+            </div>
+        </div>
+    <p> Email:<input type="email" name="email" class="form-control"  formControlName="email"  ></p>
+        <div *ngIf="!contactForm.controls.email?.valid &&(contactForm.controls.email?.dirty || contactForm.controls.email?.touched)"class="text-danger">
+          <div *ngIf="contactForm.controls.email?.errors.required">Email Required</div>
+        </div> 
+        <p> Password:<input type="password" class="form-control" name="password" formControlName="password"  ></p>
+        <div *ngIf="!password?.valid &&(password?.dirty || password?.touched)"class="text-danger">
+            <div *ngIf="contactForm.controls.password?.errors.required">Password Required</div>
+            <div *ngIf="contactForm.controls.password?.errors.minlength">Please enter atleast 6 characters</div>
+            
+        </div>
+        <p> ConfirmPassword:<input type="password"  class="form-control"name="confirmpassword" formControlName="confirmpassword"  ></p>
+        <div *ngIf="!confirmpassword?.valid &&(confirmpassword?.dirty || confirmpassword?.touched)"class="text-danger">
+            <div *ngIf="contactForm.controls.confirmpassword?.errors.required">Password Required</div>
+            <div *ngIf="contactForm.errors.notmatched">password mustmatch</div>
+            
+        </div>
+     
+        <p> PhoneNumber:<input type="text" class="form-control" name="phonenumber" formControlName="phonenumber"/></p>
+        <div *ngIf="!contactForm.controls.phonenumber?.valid && (contactForm.controls.phonenumber?.dirty || contactForm.controls.phonenumb?.touched)" class="text-danger">
+            please enter phonenumber!
+            </div>
+        <p> Age:<input type="age" name="age"  class="form-control" formControlName="age"  ></p>
+     
+       
+        <p>isAdmin:<input type="checkbox" name="isAdmin" formControlName="isAdmin"  ></p>
+        <p><input type="submit" value="submit" class="btn btn-success"  [disabled]="!contactForm.valid"/></p>
+     </form>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    

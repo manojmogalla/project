@@ -13,17 +13,17 @@
         *ngIf="!contactForm.controls.firstname?.valid && (contactForm.controls.firstname?.dirty
         ||contactForm.controls.firstname?.touched)" class="text-danger">
         <div *ngIf="contactForm.controls.firstname?.errors.required">Please Enter Your Firstname</div>
-        <div *ngIf="contactForm.controls.firstname?.errors.minlength">Firstaname should have atleast 6 characters</div>
+        <div *ngIf="contactForm.controls.firstname?.errors.minlength">First name should have atleast 6 characters</div>
         
           
       </div>
      
     <p style="margin:20px 20px"> LastName:<input type="text" name="lastname" class="form-control" formControlName="lastname"  ></p>
     <div *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)">
-        <div [hidden]="!lastname.errors.required"class="text-danger">
+        <div [hidden]="!lastname.errors.required"class="text-danger">  
             Lastname cannot be empty
         </div>
-        <div [hidden]="!lastname.errors.minlength" class="text-danger">
+        <div [hidden]="!lastname.errors.required" class="text-danger">
          
             Lastname should contain atleast 6 letters.
         </div>
