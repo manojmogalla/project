@@ -1,161 +1,18 @@
-
-
+<div class="container-fluid">
 <ul>
   <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
   <li><a routerLink="/aboutus" routerLinkActive="active">Aboutus</a></li>
   <li><a routerLink="/contactus" routerLinkActive="active">Contactus</a></li>
-  <li style="float:right"><a routerLink="/newaccount" routerLinkActive="active">Signup</a></li>
-  <li style="float:right"><a routerLink="/createaccount" routerLinkActive="active">Createaccount</a></li>
-  <li style="float:right"><a routerLink="/login" routerLinkActive="active">Login</a></li>
-   
+  <li style="float: right">
+    <a routerLink="/newaccount" routerLinkActive="active">Signup</a>
+  </li>
+  <li style="float: right">
+    <a routerLink="/createaccount" routerLinkActive="active">Createaccount</a>
+  </li>
+  <li style="float: right">
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+  </li>
 </ul>
 
 <router-outlet></router-outlet>
-<button class="btn btn-primary" (click)="getPatientsList()">getPatientsList</button>
-<h1>{{pageTitle}}</h1>
-<table class="table table-bordered">
-<tr class="bg-primary">
-    <th>patientId</th>
-    <th>firstname</th>
-    <th>lastname</th>
-    <th>status</th>
-   
-    <th>isActive</th>
-    <th>Action</th>
-   
-   
-</tr>
-<tr *ngFor="let a of users">
-<td>{{a.patientId}} </td>
-<td>{{a.firstName }}</td>
-<td>{{a.lastName }}</td>
-
-<td>{{a.status}}</td>
-
-<td>{{a.isActive}}</td>
-<td>
-  
-  <button
-  style="margin: 50px; padding: 10px"
-  type="button"
-  class="btn btn-primary"
-  (click)="openPopup()">Show Data
-  </button>
-  <div
-  class="modal"
-  
-  role="dialog"
-  [ngStyle]="{'display':displayStyle}">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-    <div class="modal-header">
-      <h4 class="modal-title">Pat+ient Details</h4>
-    </div>
-    <div class="modal-body">
-      <button class="btn btn-primary" (click)="getPatientId()">GetData</button>
-      <br>
-     
-       patientId: {{details.patientId}} 
-       <br>
-       firstName:{{details.firstName }}
-       <br>
-       lastName: {{details.lastName }}
-       <br>
-        
-        Status:{{details.status}}
-        <br>
-        DateOfBirth:{{details.dateOfBirth}}
-        <br>
-      isActive: {{details.isActive}}
-      <br> 
-       
-    <div class="modal-footer">
-      <button type="button" class="btn btn-danger"
-          (click)="closePopup()">
-      Close
-      </button>
-    </div>
-    </div>
-  </div>
-  </div> 
-
-<br>
-
-  
-
-
-
-<!--<table class="table table-bordered">
-  <tr class="bg-primary">
-      <th>Id</th>
-      <th>Post Id</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Body</th>
-    
-  </tr>
-  <tr *ngFor="let a of list">
-  <td>{{a.id}} </td>
-  <td>{{a.postid}}</td>
-  <td>{{a.name}}</td>
-  <td>{{a.email}}</td>
-  <td>{{a.body}}</td>
- 
-  </tr>
-  </table>-->
- <!-- <div class="container">
-  <h2>Modal Example</h2>
-  Trigger the modal with a button 
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-   Modal 
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-       Modal content
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  <h3>Please click on the below button open popup</h3>
-<hr />
-<button
-style="margin: 50px; padding: 10px"
-type="button"
-class="btn btn-primary"
-(click)="openPopup()">Show Data
-</button>
-<div
-class="modal"
-
-role="dialog"
-[ngStyle]="{'display':displayStyle}">
-<div class="modal-dialog" role="document">
-	<div class="modal-content">
-	<div class="modal-header">
-		<h4 class="modal-title">GeeksForGeeks</h4>
-	</div>
-	<div class="modal-body">
-		<p>One Stop Solution for all CS problems</p>
-
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-danger"
-				(click)="closePopup()">
-		Close
-		</button>
-	</div>
-	</div>
 </div>
-</div>-->

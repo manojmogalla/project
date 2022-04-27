@@ -15,11 +15,11 @@ getPatientDetails(){
  return  this.http.get("https://helixapi20211129123604.azurewebsites.net/patients",{'headers': headers});
 }
 
-getPatientUniqueDetails(){
+getPatientUniqueDetails(patientId){
   const headers=new HttpHeaders()
 .set('ApiKey','B180E86E-5D1A-4403-ABE0-A4030CAC2B5E')
 .set('Accept','text/plain')
 
-  return this.http.get("https://helixapi20211129123604.azurewebsites.net/patients/2",{'headers': headers})
+  return this.http.get(`https://helixapi20211129123604.azurewebsites.net/patients/${patientId}`,{'headers': headers})
 }
 }

@@ -15,6 +15,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { CreateaccountComponent } from './components/createaccount/createaccount.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -40,7 +41,7 @@ AgGridModule.withComponents([]),
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
-    
+    Ng2SearchPipeModule,
     HttpClientModule,
     ReactiveFormsModule,
     SignupModule,
